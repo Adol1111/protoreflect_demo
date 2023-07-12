@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = ".;example";
+package example;
+
+import "google/api/annotations.proto";
+
+service Test {
+    // 分配的统计信息
+    rpc Ping(PingReq) returns (PingResp) {
+        option (google.api.http) = {
+            post: "/test"
+        };
+    }
+}
+
+message PingReq {
+}
+
+message PingResp {
+}
